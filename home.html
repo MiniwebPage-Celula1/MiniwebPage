@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASKAPP</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+
+      
+            <h1>TASKAPP</h1>
+
+       
+
+        <div class="profile" id="profileUser">
+            <i class="bi bi-person-circle"></i>
+            <p id="activeUser"> <!-- usuario --> pepito</p>
+
+            <button type="submit" class="logOut" id="logOutButton">
+                <i class="bi bi-box-arrow-right"></i>
+            </button>
+        </div>
+
+    </header>
+
+    <main>
+        <section class="createTaskContainer">
+
+            <div class="search" id="searchTask">
+                <i class="bi bi-search"></i>
+                <input id="inputTaskSearch" type="text" placeholder="Search tasksws...">
+            </div>
+
+            <div class="functionsButtons">
+                <button type="submit" class="addTask" id="addTaskButton">
+                    <i class="bi bi-plus-square-fill"></i>
+                </button>
+
+                <button type="submit" class="filterTask" id="filterTaskButton">
+                    <i class="bi bi-filter-square-fill"></i>
+                </button>
+
+                <button type="submit" class="deleteAll" id="deleteAllButton"> 
+                    <i class="bi bi-x-square-fill"></i>
+                </button>
+            </div>
+
+        </section>
+
+        <section class="cardsTask">
+             <!-- AQUI IRAN LAS CARTAS DE TAREAS-->    
+            
+             <div class="cardTaskCreate">
+                <h3>Limpiar la losa</h3>
+             </div>
+             
+        </section>
+    </main>
+
+
+    <script type="module" src="./JS/app.js"></script>
+</body>
+
+</html>
