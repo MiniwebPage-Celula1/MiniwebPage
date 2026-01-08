@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --blue-primary: rgb(0, 65, 119);
+  --blue-secondary: rgb(103, 185, 252);
+  --grey-input:  rgba(147, 192, 221, 0.301);
+
+  --blue-primary-light: rgba(0, 87, 158, 0.664);
+  --blue-focus: rgba(0, 119, 199, 0.527);
+
+  --white: #ffffff;
+  --gray-border: rgba(128, 128, 128, 0.5);
+  --black-shadow: rgba(0, 0, 0, 0.185);
+  --black-shadow-light: rgba(0, 0, 0, 0.062);
+
+  --gradient-blue: linear-gradient(
+    3deg,
+    var(--blue-secondary),
+    var(--blue-primary)
+  );
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     font-family: "Work Sans", sans-serif;
+     font-weight: 600;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-bottom: 2px solid rgba(221, 221, 221, 0.623);
+   
+
+}
+
+h1{
+    color: var(--blue-primary);
+}
+.search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    background-color: var();
+    border-radius: 20rem;
+    padding: 0.6rem 1rem;
+   
+    width: 100%;
+    max-width: 40rem;
+    transition: all 0.3s ease;
+}
+.search:hover{
+    background: rgba(134, 200, 255, 0.212);
+}
+
+.search i {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    width: 100%;
+    font-size: 1rem;
+    color: #333;
+}
+
+.profile i{
+    font-size: 1.5rem;
+}
+
+.profile,
+.profile p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    color: rgba(2, 63, 92, 0.856);
+    margin-right: 1rem;
+}
+.cardWelcome img{
+    width: 100px;
+    height: 80%;
+    object-fit: cover;
+}
+
+.createTaskContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 1rem;
+    gap: 3rem;
+    box-shadow: 0 0 5px var(--black-shadow);
+    width: 500px;
+    height: auto;
+    border-radius:1rem ;
+
+}
+
+.createTaskContainer button{
+    border-radius: 1rem;
+    width:150px;
+    padding: 0.5rem;
+}
+
+
+.logOut{
+    border: none;
+    background: rgba(201, 0, 0, 0.788);
+    border-radius: 1rem;
+    color: rgb(253, 253, 253);
+    width: 60px;
+    
+    
+    
+}
+.logo{
+    background: var(--gradient-blue);
+    color: white;
+    padding: 1rem;
+    border-radius: 0 2rem 2rem 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+}
+
+.addTask,
+.filterTask,
+.deleteAll {
+      background: linear-gradient(135deg, #b9daff 50%, #3b82f6 50%);
+      color: var(--blue-primary);
+      background-size: 200% 200%;
+      background-position: top left;
+      border: 2px solid transparent;
+      font-size: 1.2rem;
+      transition: background-position 0.6s ease, color 0.4s ease, border 0.3s ease;
+    }
+
+
+.deleteAll:hover,
+.addTask:hover,
+.filterTask:hover{
+      background-position: bottom right;
+      border-color: #3b82f6;
+      color: white;
+    }
+
+
+.cardsTask{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    margin-top: 2rem;
+}
+
+.cardTaskCreate{
+    box-shadow: 0 0 5px var(--black-shadow);
+    
+}
