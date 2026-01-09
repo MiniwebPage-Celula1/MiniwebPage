@@ -155,6 +155,7 @@ main {
   display: flex;
  flex-direction: column;
  justify-content: space-between;
+ border-left: 7px solid var(--blue-secondary);
 }
 
 .cardTaskCreate h3 {
