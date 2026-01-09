@@ -54,8 +54,9 @@
 
     <!-- TASK CARDS -->
     <section class="cardsTask" id="cardsTaskContainer">
-<!--         AQUI VAN LAS TAREAS
- -->      <div class="cardTaskCreate" id="taskCardExample">
+      <!--         AQUI VAN LAS TAREAS
+ -->
+      <div class="cardTaskCreate" id="taskCardExample">
 
         <div class="text" id="taskText">
           <h3 id="taskTitle">Limpiar la losa</h3>
@@ -88,6 +89,42 @@
 
         </article>
       </div>
+
+       <div class="cardTaskCreate" id="taskCardExample">
+
+        <div class="text" id="taskText">
+          <h3 id="taskTitle">Limpiar la losa</h3>
+          <p id="taskDescription">
+            Tengo que limpiar trastes antes de que llegue mi mamá :u
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, commodi! Repellendus asperiores nisi assumenda, a provident in magnam possimus! Quisquam recusandae quas eos tenetur ducimus, omnis nostrum ipsam eum saepe?
+          </p>
+        </div>
+
+        <article class="status" id="taskStatus">
+
+          <div class="butttonsInterative" id="taskActions">
+            <button class="deleteCardTask" id="deleteTaskButton">
+              <i class="bi bi-trash-fill"></i>
+            </button>
+
+            <button class="editCard" id="editTaskButton">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </div>
+
+          <div class="priority" id="taskPriority">
+            <p id="taskPriorityText">High</p>
+          </div>
+
+          <select id="taskStatusSelect">
+            <option value="pending">Pending</option>
+            <option value="in_progress">In progress</option>
+            <option value="done">Done</option>
+          </select>
+
+        </article>
+      </div>
+
 
     </section>
 
@@ -148,11 +185,11 @@
       <button type="submit" id="applyFiltersButton">
         Apply Filters
       </button>
-            <button type="submit" id="submitExitFilter">Exit</button>
+      <button type="submit" id="submitExitFilter">Exit</button>
     </form>
   </div>
 
-<!-- CARTA DE ALERTA, CONFIRMACION PARA BORRAR TODO -->
+  <!-- CARTA DE ALERTA, CONFIRMACION PARA BORRAR TODO -->
   <div class="alertDeleteAll" id="alertDeleteAllCard">
     <h2>Are you sure you want to delete all the tasks?</h2>
     <i class="bi bi-exclamation"></i>
@@ -164,29 +201,30 @@
   </div>
 
 
-<!--   CARTA DE ALERTA, CONFIRMACION PARA NO CREAR UNA TAREA--> 
-    <div class="alertTaskProcess" id="alertTaskProcess">
-      <h2>Are you sure you want to stop the process?</h2>
-      <i class="bi bi-exclamation"></i>
-    
-      <div class="confirmation">
-        <button type="button" class="yes" id="yesTaskButton">Yes</button>
-        <button type="button" class="No" id="noTaskButton">No</button>
-      </div>
-    </div>
-    
-<!--     CARTA DE ALERTA, CONFIRMACION PARA BORRAR UN TAREA EN ESPECIFICO
- -->    <div class="alertTaskDelete" id="alertTaskDelete">
-      <h2>Do you want to delete this task?</h2>
-      <i class="bi bi-exclamation"></i>
-    
-      <div class="confirmation">
-        <button type="button" class="yes" id="yesTaskDeleteButton">Yes</button>
-        <button type="button" class="No" id="noTaskDeleteButton">No</button>
-      </div>
-    </div>
+  <!--   CARTA DE ALERTA, CONFIRMACION PARA NO CREAR UNA TAREA-->
+  <div class="alertTaskProcess" id="alertTaskProcess">
+    <h2>Are you sure you want to stop the process?</h2>
+    <i class="bi bi-exclamation"></i>
 
-    <script type="module" src="./JS/home.js"></script>
+    <div class="confirmation">
+      <button type="button" class="yes" id="yesTaskButton">Yes</button>
+      <button type="button" class="No" id="noTaskButton">No</button>
+    </div>
+  </div>
+
+  <!--     CARTA DE ALERTA, CONFIRMACION PARA BORRAR UN TAREA EN ESPECIFICO
+ -->
+  <div class="alertTaskDelete" id="alertTaskDelete">
+    <h2>Do you want to delete this task?</h2>
+    <i class="bi bi-exclamation"></i>
+
+    <div class="confirmation">
+      <button type="button" class="yes" id="yesTaskDeleteButton">Yes</button>
+      <button type="button" class="No" id="noTaskDeleteButton">No</button>
+    </div>
+  </div>
+
+  <script type="module" src="./JS/home.js"></script>
 </body>
 
 </html>
