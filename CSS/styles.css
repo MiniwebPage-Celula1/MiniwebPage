@@ -3,219 +3,177 @@
 :root {
   --blue-primary: rgb(0, 65, 119);
   --blue-secondary: rgb(103, 185, 252);
-  --grey-input:  rgba(147, 192, 221, 0.301);
-
   --blue-primary-light: rgba(0, 87, 158, 0.664);
   --blue-focus: rgba(0, 119, 199, 0.527);
-
+  --grey-input: rgba(147, 192, 221, 0.301);
   --white: #ffffff;
   --gray-border: rgba(128, 128, 128, 0.5);
   --black-shadow: rgba(0, 0, 0, 0.185);
   --black-shadow-light: rgba(0, 0, 0, 0.062);
-
-  --gradient-blue: linear-gradient(
-    3deg,
-    var(--blue-secondary),
-    var(--blue-primary)
-  );
-}
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-     font-family: "Work Sans", sans-serif;
-     font-weight: 600;
+  --gradient-blue: linear-gradient(3deg, var(--blue-secondary), var(--blue-primary));
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 1rem;
-    border-bottom: 2px solid rgba(221, 221, 221, 0.623);
-   
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
 }
 
-h1{
-    color: var(--blue-primary);
+h1 {
+  color: var(--blue-primary);
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 2px solid rgba(221, 221, 221, 0.623);
+}
+
+.logo {
+  background: var(--gradient-blue);
+  color: var(--white);
+  padding: 1rem;
+  border-radius: 0 2rem 2rem 0;
+}
+
 .search {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    background-color: var();
-    border-radius: 20rem;
-    padding: 0.6rem 1rem;
-   
-    width: 100%;
-    max-width: 40rem;
-    transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  max-width: 40rem;
+  border-radius: 20rem;
+  transition: all 0.3s ease;
 }
-.search:hover{
-    background: rgba(134, 200, 255, 0.212);
+
+.search:hover {
+  background: rgba(134, 200, 255, 0.212);
 }
 
 .search i {
-    color: #888;
-    font-size: 1.1rem;
+  font-size: 1.1rem;
+  color: #888;
 }
 
 .search input {
-    border: none;
-    outline: none;
-    background: transparent;
-
-    width: 100%;
-    font-size: 1rem;
-    color: #333;
-}
-
-.profile i{
-    font-size: 1.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #333;
 }
 
 .profile,
-.profile p{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    color: rgba(2, 63, 92, 0.856);
-    margin-right: 1rem;
-}
-.cardWelcome img{
-    width: 100px;
-    height: 80%;
-    object-fit: cover;
+.profile p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(2, 63, 92, 0.856);
+  margin-right: 1rem;
 }
 
-.createTaskContainer{
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    padding: 1rem;
-    gap: 3rem;
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        width: 100%;
-    height:170px;
-    border-radius:1rem ;
-    
-
+.profile i {
+  font-size: 1.5rem;
 }
 
-.createTaskContainer button{
-    border-radius: 1rem;
-    width:150px;
-    padding: 0.5rem;
-    
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
 }
 
-
-.logOut{
-    border: none;
-    background: rgba(201, 0, 0, 0.788);
-    border-radius: 1rem;
-    color: rgb(253, 253, 253);
-    width: 60px;
-    
-    
-    
-}
-.logo{
-    background: var(--gradient-blue);
-    color: white;
-    padding: 1rem;
-    border-radius: 0 2rem 2rem 0;
+.cardWelcome img {
+  width: 100px;
+  height: 80%;
+  object-fit: cover;
 }
 
-main{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    gap: 1rem;
+.createTaskContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 100%;
+  height: 170px;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.createTaskContainer button {
+  width: 150px;
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
+.functionsButtons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .addTask,
 .filterTask,
-.deleteAll {
-      background: linear-gradient(135deg, #b9daff 50%, #3b82f6 50%);
-      color: var(--blue-primary);
-      background-size: 200% 200%;
-      background-position: top left;
-      border: 2px solid transparent;
-      font-size: 1.2rem;
-      transition: background-position 0.6s ease, color 0.4s ease, border 0.3s ease;
-    }
+.deleteAll,
+.butttonsInterative button {
+  background: linear-gradient(135deg, #b9daff 50%, #3b82f6 50%);
+  background-size: 200% 200%;
+  background-position: top left;
+  color: var(--blue-primary);
+  border: 2px solid transparent;
+  font-size: 1.2rem;
+  transition: background-position 0.6s ease, color 0.4s ease, border 0.3s ease;
+}
 
-
-.deleteAll:hover,
 .addTask:hover,
-.filterTask:hover{
-      background-position: bottom right;
-      border-color: #3b82f6;
-      color: white;
-    }
-
-.functionsButtons{
-    display: flex;
-    justify-content: space-around;
-}
-.cardsTask{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr;
-    margin-top: 2rem;
-    
+.filterTask:hover,
+.deleteAll:hover,
+.butttonsInterative button:hover {
+  background-position: bottom right;
+  border-color: #3b82f6;
+  color: var(--white);
 }
 
-.cardTaskCreate{
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    border-radius: 1rem;
-    padding: 1rem;
-    margin-top: 0;
-    height: 100%;
-
-    
+.butttonsInterative button {
+  width: 50px;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-.cardTaskCreate h3{
-    color: var(--blue-primary);
+.cardsTask {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
 }
 
-.status{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 3rem;
-
+.cardTaskCreate {
+  height: 100%;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.butttonsInterative button{
-     background: linear-gradient(135deg, #b9daff 50%, #3b82f6 50%);
-      color: var(--blue-primary);
-      background-size: 200% 200%;
-      background-position: top left;
-      border: 2px solid transparent;
-      font-size: 1.2rem;
-      transition: background-position 0.6s ease, color 0.4s ease, border 0.3s ease;
-      width: 50px;
-      border-radius: 10px;
-      padding: 5px;
+.cardTaskCreate h3 {
+  color: var(--blue-primary);
 }
 
-.butttonsInterative button:hover{
-       background-position: bottom right;
-      border-color: #3b82f6;
-      color: white;
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
 }
 
-.text{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #taskStatusSelect {
@@ -223,52 +181,49 @@ main{
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  background-color: #fff;
-  color: #333;
+  background: #fff;
   cursor: pointer;
-  
 }
 
-.priority{
-    background: rgba(255, 0, 0, 0.295);
-    border: 2px solid red;
-    border-radius: 10px;
-    padding: 7px;
-    color: red
+.priority {
+  padding: 7px;
+  border-radius: 10px;
+  border: 2px solid red;
+  background: rgba(255, 0, 0, 0.295);
+  color: red;
 }
 
+.logOut {
+  width: 60px;
+  border: none;
+  border-radius: 1rem;
+  background: rgba(201, 0, 0, 0.788);
+  color: var(--white);
+}
 
 .card {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-
-  z-index: 1000;
-
-  display: none;
-  background: #fff;
   padding: 20px;
   border-radius: 12px;
+  background: var(--white);
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1000;
   animation: slideUpFade 0.2s ease;
-}
-
-.card:active{
-    display: block;
 }
 
 .card h2 {
   margin-bottom: 20px;
-  color: #333;
   text-align: center;
+  color: var(--blue-primary);
 }
 
 .card label {
   display: block;
   margin-bottom: 6px;
-  font-weight: 600;
   color: #555;
 }
 
@@ -280,68 +235,101 @@ main{
   margin-bottom: 16px;
   border-radius: 6px;
   border: 1px solid #ccc;
-  font-size: 14px;
 }
 
-.card input:focus,
-.card textarea:focus,
-.card select:focus {
-  outline: none;
-}
-
-#submitCreateTask {
+#submitCreateTask,
+#applyFiltersButton {
   width: 100%;
   padding: 12px;
   border: none;
   border-radius: 8px;
-   background-color:rgba(0, 76, 139, 0.685);
-  color: #fff;
+  background: rgba(0, 76, 139, 0.685);
+  color: var(--white);
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-#submitCreateTask:hover {
-   background-color: rgba(0, 62, 134, 0.836);
-
+#submitCreateTask:hover,
+#applyFiltersButton:hover {
+  background: rgba(0, 62, 134, 0.836);
 }
 
-#submitExit:hover {
-   background-color: rgba(194, 0, 0, 0.842);
-
-}
-.card h2{
-    color: var(--blue-primary);
-}
-#submitExit{
-width: 100%;
+#submitExit {
+  width: 100%;
   padding: 12px;
+  margin-top: 1rem;
   border: none;
   border-radius: 8px;
-   background-color:rgba(139, 0, 0, 0.685);
-  color: #fff;
+  background: rgba(139, 0, 0, 0.685);
+  color: var(--white);
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease-in;
-  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+#submitExit:hover {
+  background: rgba(194, 0, 0, 0.842);
 }
 
 #backgroundForm {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: none;
-  z-index: 1000;
-}
-
-#backgroundForm {
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: none;
   z-index: 20;
+}
+
+.alertDeleteAll {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--white);
+  display: none;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideUpFade 0.2s ease;
+}
+
+.alertDeleteAll i {
+  font-size: 10rem;
+  color: rgba(163, 7, 7, 0.733);
+}
+
+.confirmation button {
+  width: 130px;
+  padding: 1rem;
+  border: none;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.confirmation button:hover {
+  transform: translateY(-5px);
+}
+
+.yes {
+  background: rgba(0, 76, 139, 0.685);;
+}
+
+.No {
+  background: rgba(255, 0, 0, 0.473);
+}
+
+.yes:hover {
+  background: rgba(0, 62, 134, 0.836);
+  color: var(--white);
+}
+
+.No:hover {
+  background:  rgba(194, 0, 0, 0.842);
+  color: var(--white);
 }
 
 @keyframes slideUpFade {
@@ -353,85 +341,4 @@ width: 100%;
     transform: translate(-50%, -50%);
     opacity: 1;
   }
-}
-
-
-#applyFiltersButton{
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-   background-color:rgba(0, 76, 139, 0.685);
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#applyFiltersButton:hover {
-   background-color: rgba(0, 62, 134, 0.836);
-
-
-}
-
-
-.alertDeleteAll{
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 1rem ;
-    display: none;
-         position: fixed;
-         background:white;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    animation: slideUpFade 0.2s ease;
-  
-
-
-}
-
-.alertDeleteAll i{
-  font-size: 10rem;
-  color: rgba(163, 7, 7, 0.733);
-
-}
-
-.confirmation button{
-  width: 130px;
-  border:none;
-  border-radius: 1rem;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-.confirmation button:hover{
-  transform:  translateY(-5px);
-}
-
-
-.yes{
-  background: rgba(0, 128, 0, 0.534);
-}
-
-.No{
-  background: rgba(255, 0, 0, 0.473);
-}
-
-.yes:hover{
-  background: rgb(0, 136, 0);
-  color: var(--white) ;
-}
-
-.No:hover{
-  background: red;
-  color: var(--white);
 }

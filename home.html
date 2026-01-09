@@ -149,11 +149,10 @@
         Apply Filters
       </button>
             <button type="submit" id="submitExit">Exit</button>
-
     </form>
   </div>
 
-
+<!-- CARTA DE ALERTA, CONFIRMACION PARA BORRAR TODO -->
   <div class="alertDeleteAll" id="alertDeleteAllCard">
     <h2>¿I'm sure you want to delete all the tasks?</h2>
     <i class="bi bi-exclamation"></i>
@@ -164,7 +163,19 @@
     </div>
   </div>
 
-  <script type="module" src="./JS/home.js"></script>
+
+<!--   CARTA DE ALERTA, CONFIRMACION PARA NO CREAR UNA TAREA--> 
+    <div class="alertDeleteAll" id="alertTaskProcess">
+    <h2>¿I'm sure you want to stop the task creation process?</h2>
+    <i class="bi bi-exclamation"></i>
+
+    <div class="confirmation">
+      <button class="yes" id="yesTaskButton">Yes</button>
+      <button class="No" id="noTaskButton">No</button>
+    </div>
+  </div>
+
+    <script type="module" src="./JS/home.js"></script>
 </body>
 
 </html>

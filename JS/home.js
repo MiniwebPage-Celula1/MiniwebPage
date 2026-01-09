@@ -7,6 +7,9 @@ const filterTaskButton = document.getElementById('filterTaskButton');
 const alertDeleteAll = document.getElementById('alertDeleteAllCard');
 const deleteAllButton = document.getElementById('deleteAllButton');
 const noButton = document.getElementById('noButton');
+const alertTaskProcess = document.getElementById('alertTaskProcess')
+const yesTaskButton = document.getElementById('yesTaskButton');
+const noTaskButton = document.getElementById('noTaskButton');
 
 function closeAllCards() {
     createTaskCard.style.display = 'none';
