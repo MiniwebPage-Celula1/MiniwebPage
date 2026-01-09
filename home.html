@@ -54,33 +54,33 @@
 
     <!-- TASK CARDS -->
     <section class="cardsTask" id="cardsTaskContainer">
-<!--         AQUI VAN LAS TAREAS
- -->      <div class="cardTaskCreate" id="taskCardExample">
 
-        <div class="text" id="taskText">
-          <h3 id="taskTitle">Limpiar la losa</h3>
-          <p id="taskDescription">
-            Tengo que limpiar trastes antes de que llegue mi mamá :u
+      <div class="cardTaskCreate" id="taskCardTemplate">
+
+        <div class="text">
+          <h3 class="taskTitle">Limpiar la losa</h3>
+          <p class="taskDescription">
+            Tengo que limpiar trastes antes de que llegue mi mamÃ¡ :u
           </p>
         </div>
 
-        <article class="status" id="taskStatus">
+        <article class="status">
 
-          <div class="butttonsInterative" id="taskActions">
-            <button class="deleteCardTask" id="deleteTaskButton">
+          <div class="butttonsInterative">
+            <button class="deleteCardTask">
               <i class="bi bi-trash-fill"></i>
             </button>
 
-            <button class="editCard" id="editTaskButton">
+            <button class="editCard">
               <i class="bi bi-pencil-fill"></i>
             </button>
           </div>
 
-          <div class="priority" id="taskPriority">
-            <p id="taskPriorityText">High</p>
+          <div class="priority">
+            <p class="taskPriorityText">High</p>
           </div>
 
-          <select id="taskStatusSelect">
+          <select class="taskStatusSelect">
             <option value="pending">Pending</option>
             <option value="in_progress">In progress</option>
             <option value="done">Done</option>
@@ -118,7 +118,8 @@
       </select>
 
       <button type="submit" id="submitCreateTask">Submit</button>
-      <button type="submit" id="submitExit">Exit</button>
+      <button type="button" id="submitExit">Exit</button>
+    </form>
   </div>
 
 
@@ -148,34 +149,23 @@
       <button type="submit" id="applyFiltersButton">
         Apply Filters
       </button>
-            <button type="submit" id="submitExit">Exit</button>
+
     </form>
   </div>
 
-<!-- CARTA DE ALERTA, CONFIRMACION PARA BORRAR TODO -->
+  <!-- ALERT DELETE ALL CARD -->
   <div class="alertDeleteAll" id="alertDeleteAllCard">
-    <h2>¿I'm sure you want to delete all the tasks?</h2>
-    <i class="bi bi-exclamation"></i>
+    <i class="bi bi-exclamation-triangle-fill"></i>
+    <h2>Are you sure?</h2>
+    <p>This will delete all tasks permanently.</p>
 
     <div class="confirmation">
-      <button class="yes" id="yesButton">Yes</button>
-      <button class="No" id="noButton">No</button>
+      <button class="yes" id="confirmDeleteAllButton">Yes, Delete All</button>
+      <button class="No" id="noButton">No, Cancel</button>
     </div>
   </div>
 
-
-<!--   CARTA DE ALERTA, CONFIRMACION PARA NO CREAR UNA TAREA--> 
-    <div class="alertDeleteAll" id="alertTaskProcess">
-    <h2>¿I'm sure you want to stop the task creation process?</h2>
-    <i class="bi bi-exclamation"></i>
-
-    <div class="confirmation">
-      <button class="yes" id="yesTaskButton">Yes</button>
-      <button class="No" id="noTaskButton">No</button>
-    </div>
-  </div>
-
-    <script type="module" src="./JS/home.js"></script>
+  <script type="module" src="./JS/home.js"></script>
 </body>
 
 </html>
