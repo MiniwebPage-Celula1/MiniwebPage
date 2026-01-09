@@ -256,7 +256,8 @@ main {
   background: rgba(0, 62, 134, 0.836);
 }
 
-#submitExit {
+#submitExit,
+#submitExitFilter {
   width: 100%;
   padding: 12px;
   margin-top: 1rem;
@@ -270,7 +271,8 @@ main {
   transition: all 0.3s ease;
 }
 
-#submitExit:hover {
+#submitExit:hover,
+#submitExitFilter:hover {
   background: rgba(194, 0, 0, 0.842);
 }
 
@@ -315,7 +317,8 @@ main {
 }
 
 .yes {
-  background: rgba(0, 76, 139, 0.685);;
+  background: rgba(0, 76, 139, 0.685);
+  ;
 }
 
 .No {
@@ -328,7 +331,7 @@ main {
 }
 
 .No:hover {
-  background:  rgba(194, 0, 0, 0.842);
+  background: rgba(194, 0, 0, 0.842);
   color: var(--white);
 }
 
@@ -337,8 +340,31 @@ main {
     transform: translate(-50%, 100px);
     opacity: 0;
   }
+
   to {
     transform: translate(-50%, -50%);
     opacity: 1;
   }
+}
+
+
+#applyFiltersButton {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0, 76, 139, 0.685);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#applyFiltersButton:hover {
+  background-color: rgba(0, 62, 134, 0.836);
+}
+
+#taskCardTemplate {
+  display: none;
 }

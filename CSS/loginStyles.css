@@ -109,3 +109,17 @@ img {
   filter: brightness(200%);
   width: 80%;
 }
+
+.form-message {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.form-message.error {
+  color: red;
+}
+
+.form-message.success {
+  color: green;
+}
+
