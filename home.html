@@ -54,8 +54,8 @@
 
     <!-- TASK CARDS -->
     <section class="cardsTask" id="cardsTaskContainer">
-
-      <div class="cardTaskCreate" id="taskCardExample">
+<!--         AQUI VAN LAS TAREAS
+ -->      <div class="cardTaskCreate" id="taskCardExample">
 
         <div class="text" id="taskText">
           <h3 id="taskTitle">Limpiar la losa</h3>
@@ -148,11 +148,34 @@
       <button type="submit" id="applyFiltersButton">
         Apply Filters
       </button>
-
+            <button type="submit" id="submitExit">Exit</button>
     </form>
   </div>
 
-  <script type="module" src="./JS/home.js"></script>
+<!-- CARTA DE ALERTA, CONFIRMACION PARA BORRAR TODO -->
+  <div class="alertDeleteAll" id="alertDeleteAllCard">
+    <h2>¿I'm sure you want to delete all the tasks?</h2>
+    <i class="bi bi-exclamation"></i>
+
+    <div class="confirmation">
+      <button class="yes" id="yesButton">Yes</button>
+      <button class="No" id="noButton">No</button>
+    </div>
+  </div>
+
+
+<!--   CARTA DE ALERTA, CONFIRMACION PARA NO CREAR UNA TAREA--> 
+    <div class="alertDeleteAll" id="alertTaskProcess">
+    <h2>¿I'm sure you want to stop the task creation process?</h2>
+    <i class="bi bi-exclamation"></i>
+
+    <div class="confirmation">
+      <button class="yes" id="yesTaskButton">Yes</button>
+      <button class="No" id="noTaskButton">No</button>
+    </div>
+  </div>
+
+    <script type="module" src="./JS/home.js"></script>
 </body>
 
 </html>
