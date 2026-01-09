@@ -341,7 +341,7 @@ width: 100%;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
-  z-index: 1000;
+  z-index: 20;
 }
 
 @keyframes slideUpFade {
@@ -353,4 +353,85 @@ width: 100%;
     transform: translate(-50%, -50%);
     opacity: 1;
   }
+}
+
+
+#applyFiltersButton{
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+   background-color:rgba(0, 76, 139, 0.685);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#applyFiltersButton:hover {
+   background-color: rgba(0, 62, 134, 0.836);
+
+
+}
+
+
+.alertDeleteAll{
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem ;
+    display: none;
+         position: fixed;
+         background:white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUpFade 0.2s ease;
+  
+
+
+}
+
+.alertDeleteAll i{
+  font-size: 10rem;
+  color: rgba(163, 7, 7, 0.733);
+
+}
+
+.confirmation button{
+  width: 130px;
+  border:none;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.confirmation button:hover{
+  transform:  translateY(-5px);
+}
+
+
+.yes{
+  background: rgba(0, 128, 0, 0.534);
+}
+
+.No{
+  background: rgba(255, 0, 0, 0.473);
+}
+
+.yes:hover{
+  background: rgb(0, 136, 0);
+  color: var(--white) ;
+}
+
+.No:hover{
+  background: red;
+  color: var(--white);
 }

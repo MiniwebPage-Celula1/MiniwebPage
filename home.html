@@ -54,8 +54,8 @@
 
     <!-- TASK CARDS -->
     <section class="cardsTask" id="cardsTaskContainer">
-
-      <div class="cardTaskCreate" id="taskCardExample">
+<!--         AQUI VAN LAS TAREAS
+ -->      <div class="cardTaskCreate" id="taskCardExample">
 
         <div class="text" id="taskText">
           <h3 id="taskTitle">Limpiar la losa</h3>
@@ -148,8 +148,20 @@
       <button type="submit" id="applyFiltersButton">
         Apply Filters
       </button>
+            <button type="submit" id="submitExit">Exit</button>
 
     </form>
+  </div>
+
+
+  <div class="alertDeleteAll" id="alertDeleteAllCard">
+    <h2>¿I'm sure you want to delete all the tasks?</h2>
+    <i class="bi bi-exclamation"></i>
+
+    <div class="confirmation">
+      <button class="yes" id="yesButton">Yes</button>
+      <button class="No" id="noButton">No</button>
+    </div>
   </div>
 
   <script type="module" src="./JS/home.js"></script>
