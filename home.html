@@ -2,68 +2,157 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TASKAPP</title>
-    <link rel="stylesheet" href="./CSS/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASKAPP</title>
+  <link rel="stylesheet" href="./CSS/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <header>
 
-      
-            <h1>TASKAPP</h1>
+  <!-- HEADER -->
+  <header id="mainHeader">
+    <h1 id="appTitle">TASKAPP</h1>
 
-       
+    <div class="profile" id="profileUser">
+      <i class="bi bi-person-circle" id="profileIcon"></i>
+      <p id="activeUser">pepito</p>
 
-        <div class="profile" id="profileUser">
-            <i class="bi bi-person-circle"></i>
-            <p id="activeUser"> <!-- usuario --> pepito</p>
+      <button type="button" class="logOut" id="logOutButton">
+        <i class="bi bi-box-arrow-right"></i>
+      </button>
+    </div>
+  </header>
 
-            <button type="submit" class="logOut" id="logOutButton">
-                <i class="bi bi-box-arrow-right"></i>
-            </button>
+  <!-- MAIN -->
+  <main id="mainContent">
+
+    <!-- CREATE / SEARCH TASK -->
+    <section class="createTaskContainer" id="createTaskContainer">
+
+      <div class="search" id="searchTask">
+        <i class="bi bi-search" id="searchIcon"></i>
+        <input id="inputTaskSearch" type="text" placeholder="Search tasks..." />
+      </div>
+
+      <div class="functionsButtons" id="functionsButtons">
+        <button type="button" class="addTask" id="addTaskButton">
+          <i class="bi bi-plus-square-fill"></i>
+        </button>
+
+        <button type="button" class="filterTask" id="filterTaskButton">
+          <i class="bi bi-filter-square-fill"></i>
+        </button>
+
+        <button type="button" class="deleteAll" id="deleteAllButton">
+          <i class="bi bi-x-square-fill"></i>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- TASK CARDS -->
+    <section class="cardsTask" id="cardsTaskContainer">
+
+      <div class="cardTaskCreate" id="taskCardExample">
+
+        <div class="text" id="taskText">
+          <h3 id="taskTitle">Limpiar la losa</h3>
+          <p id="taskDescription">
+            Tengo que limpiar trastes antes de que llegue mi mamá :u
+          </p>
         </div>
 
-    </header>
+        <article class="status" id="taskStatus">
 
-    <main>
-        <section class="createTaskContainer">
+          <div class="butttonsInterative" id="taskActions">
+            <button class="deleteCardTask" id="deleteTaskButton">
+              <i class="bi bi-trash-fill"></i>
+            </button>
 
-            <div class="search" id="searchTask">
-                <i class="bi bi-search"></i>
-                <input id="inputTaskSearch" type="text" placeholder="Search tasksws...">
-            </div>
+            <button class="editCard" id="editTaskButton">
+              <i class="bi bi-pencil-fill"></i>
+            </button>
+          </div>
 
-            <div class="functionsButtons">
-                <button type="submit" class="addTask" id="addTaskButton">
-                    <i class="bi bi-plus-square-fill"></i>
-                </button>
+          <div class="priority" id="taskPriority">
+            <p id="taskPriorityText">High</p>
+          </div>
 
-                <button type="submit" class="filterTask" id="filterTaskButton">
-                    <i class="bi bi-filter-square-fill"></i>
-                </button>
+          <select id="taskStatusSelect">
+            <option value="pending">Pending</option>
+            <option value="in_progress">In progress</option>
+            <option value="done">Done</option>
+          </select>
 
-                <button type="submit" class="deleteAll" id="deleteAllButton"> 
-                    <i class="bi bi-x-square-fill"></i>
-                </button>
-            </div>
+        </article>
+      </div>
 
-        </section>
+    </section>
 
-        <section class="cardsTask">
-             <!-- AQUI IRAN LAS CARTAS DE TAREAS-->    
-            
-             <div class="cardTaskCreate">
-                <h3>Limpiar la losa</h3>
-             </div>
-             
-        </section>
-    </main>
+  </main>
 
 
-    <script type="module" src="./JS/app.js"></script>
+
+  <!-- CREATE TASK FORM -->
+
+  <div id="backgroundForm"></div>
+
+
+  <div class="card" id="createTaskCard">
+    <h2 id="createTaskTitle">Create Task</h2>
+
+    <form id="createTaskForm">
+      <label for="taskTitleInput">Title</label>
+      <input type="text" id="taskTitleInput" placeholder="Enter task title" />
+
+      <label for="taskDescriptionInput">Description</label>
+      <textarea id="taskDescriptionInput" rows="4" placeholder="Write a short description"></textarea>
+
+      <label for="taskPrioritySelect">Priority</label>
+      <select id="taskPrioritySelect">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <button type="submit" id="submitCreateTask">Submit</button>
+      <button type="submit" id="submitExit">Exit</button>
+  </div>
+
+
+
+  <!-- FILTER TASK FORM -->
+  <div class="card filter-card" id="filterTaskCard">
+    <h2 id="filterTaskTitle">Filter Tasks</h2>
+
+    <form id="filterTaskForm">
+
+      <label for="filterPrioritySelect">Priority</label>
+      <select id="filterPrioritySelect">
+        <option value="">All priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+
+      <label for="filterStatusSelect">Status</label>
+      <select id="filterStatusSelect">
+        <option value="">All statuses</option>
+        <option value="pending">Pending</option>
+        <option value="in_progress">In progress</option>
+        <option value="done">Done</option>
+      </select>
+
+      <button type="submit" id="applyFiltersButton">
+        Apply Filters
+      </button>
+
+    </form>
+  </div>
+
+  <script type="module" src="./JS/home.js"></script>
 </body>
 
 </html>
