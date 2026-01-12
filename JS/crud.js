@@ -1,5 +1,6 @@
 'use strict';
-import { addTask, getTasks, deleteTask, deleteAllTasks } from './data.js';
+
+import { addTask, getTasks, deleteTask, deleteAllTasks, updateTaskStatus } from './data.js';
 
 // Container
 const taskContainer = document.querySelector('.cardsTask');
@@ -10,11 +11,6 @@ const taskContainer = document.querySelector('.cardsTask');
 
 /**
  * Handles the logic for creating a new task.
- * @param {string} userId - The ID of the current user.
- * @param {string} title - Task title.
- * @param {string} description - Task description.
- * @param {string} priority - Task priority.
- * @returns {boolean} - Returns true if successful, false if validation failed.
  */
 export function createTaskLogic(userId, title, description, priority) {
     if (!title) {
@@ -38,12 +34,11 @@ export function createTaskLogic(userId, title, description, priority) {
 
 /**
  * Deletes a task by ID and refreshes the UI.
- * @param {number} taskId 
  */
 export function deleteTaskLogic(taskId) {
     if (confirm("Delete this task?")) {
         deleteTask(taskId);
-        renderTasks(); // Re-render to update UI (removes element)
+        renderTasks(); 
     }
 }
 
@@ -51,7 +46,6 @@ export function deleteTaskLogic(taskId) {
  * Handles the logic for deleting all tasks.
  */
 export function deleteAllTasksLogic() {
-    // No confirm needed here as the UI modal already asks for it
     deleteAllTasks();
     renderTasks();
 }
@@ -62,14 +56,16 @@ export function deleteAllTasksLogic() {
  */
 const template = document.getElementById('taskCardTemplate');
 
-export function renderTasks() {
+// Filtre: it Add the parameter 'filteredTasks' for can renderize specific results 
+export function renderTasks(filteredTasks = null) {
     if (!taskContainer) return;
 
-    const tasks = getTasks();
+    // Filtre: If filteredTasks have content, we used that; if not, We obtained all the tasks.
+    const tasks = filteredTasks ? filteredTasks : getTasks();
     taskContainer.innerHTML = '';
 
     if (!tasks || tasks.length === 0) {
-        taskContainer.innerHTML = '<p style="color:white; text-align:center;">No tasks yet. Add one!</p>';
+        taskContainer.innerHTML = '<p style="color:white; text-align:center;">No tasks found.</p>';
         return;
     }
 
@@ -103,7 +99,14 @@ export function renderTasks() {
 
         // Status
         const statusSelect = card.querySelector('.taskStatusSelect');
-        if (statusSelect) statusSelect.value = task.status;
+        if (statusSelect) {
+            statusSelect.value = task.status;
+            
+            // Listen the change and save in data.js
+            statusSelect.addEventListener('change', (e) => {
+                updateTaskStatus(task.id, e.target.value);
+            });
+        }
 
         taskContainer.appendChild(card);
     });

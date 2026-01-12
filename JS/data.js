@@ -55,8 +55,25 @@ export function loadTasks(userID) {
     return tasks;
 }
 
+// filtre: This function is clave for that the filtres of the other files
+// get always the list of task updated of the active user
 export function getTasks() {
     return tasks;
+}
+
+// Function for update the status
+export function updateTaskStatus(taskId, newStatus) {
+    // We update the status in the arrat of memory
+    tasks = tasks.map(task => 
+        task.id === taskId ? { ...task, status: newStatus } : task
+    );
+
+    // Save in LocalStorage for the persinstance of recharge the page
+    if (currentUserId) {
+        localStorage.setItem(`tasks_${currentUserId}`, JSON.stringify(tasks));
+    } else {
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
 }
 
 export function deleteTask(taskId) {
@@ -85,4 +102,3 @@ export function deleteAllTasks() {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 }
-
