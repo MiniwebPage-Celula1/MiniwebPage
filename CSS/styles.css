@@ -296,7 +296,22 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+#submitExit{
+   width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(139, 0, 0, 0.685);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#submitExit:hover{
+    background: rgba(194, 0, 0, 0.842);
+}
 .submitExitFilter:hover{
     background: rgba(194, 0, 0, 0.842);
 }
