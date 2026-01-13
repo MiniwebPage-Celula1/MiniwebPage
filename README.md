@@ -26,13 +26,13 @@ El objetivo principal del proyecto es aplicar buenas prácticas de trabajo en eq
 
 ## 🧱 Estructura del proyecto
 
-TaskFlow/
-├── index.html
-├── home.html
-├── css/
-├── js/
-├── img/
-└── README.md
+TaskFlow/<br>
+├── index.html<br>
+├── home.html<br>
+├── css/<br>
+├── js/<br>
+├── img/<br>
+└── README.md<br>
 
 
 ---
@@ -86,3 +86,4 @@ El proyecto se desarrolló siguiendo una división clara de roles para evitar co
 1. Clonar el repositorio:
    ```bash
    git clone https://github.com/MiniwebPage-Celula1/MiniwebPage.git
+
