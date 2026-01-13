@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -89,17 +90,11 @@ main {
   gap: 1rem;
 }
 
-.cardWelcome img {
-  width: 100px;
-  height: 80%;
-  object-fit: cover;
-}
-
 .createTaskContainer {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-top: 2rem;
+  margin-top: 4.5rem;
   padding: 1rem;
   width: 100%;
   height: 170px;
@@ -153,21 +148,40 @@ main {
 }
 
 .cardTaskCreate {
-  height: 100%;
+  height: auto;
+  width: 580px;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ border-left: 7px solid var(--blue-secondary);
+ transition: all 0.3s ease;
+ margin-top: 2rem;
+}
+
+
+.cardTaskCreate:hover{
+  transform:translateY(-5px);
+  border: 2px solid var(--blue-secondary);
+  box-shadow: 0 12px 10px rgba(0, 0, 0, 0.13);
 }
 
 .cardTaskCreate h3 {
   color: var(--blue-primary);
 }
 
+.statusSelect{
+  padding: 0.5rem;
+  border-radius: 10px;
+}
 .status {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 3rem;
+
 }
 
 .text {
@@ -188,9 +202,9 @@ main {
 .priority {
   padding: 7px;
   border-radius: 10px;
-  border: 2px solid red;
-  background: rgba(255, 0, 0, 0.295);
-  color: red;
+  border: 2px solid rgba(0, 0, 0, 0.308);
+  background: rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.267);
 }
 
 .logOut {
@@ -256,8 +270,7 @@ main {
   background: rgba(0, 62, 134, 0.836);
 }
 
-#submitExit,
-#submitExitFilter {
+.buttontExitTask{
   width: 100%;
   padding: 12px;
   margin-top: 1rem;
@@ -270,9 +283,24 @@ main {
   cursor: pointer;
   transition: all 0.3s ease;
 }
+.submitExitFilter{
+   width: 100%;
+  padding: 12px;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(139, 0, 0, 0.685);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-#submitExit:hover,
-#submitExitFilter:hover {
+.submitExitFilter:hover{
+    background: rgba(194, 0, 0, 0.842);
+}
+.buttontExitTask:hover {
   background: rgba(194, 0, 0, 0.842);
 }
 
@@ -288,7 +316,21 @@ main {
   position: fixed;
   inset: 50% auto auto 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
+  width: 400px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--white);
+  display: none ;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideUpFade 0.2s ease;
+}
+.alertTaskDelete{
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
   padding: 1rem;
   border-radius: 1rem;
   background: var(--white);
@@ -299,17 +341,39 @@ main {
   animation: slideUpFade 0.2s ease;
 }
 
+.alertTaskProcess{
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: var(--white);
+  display: none;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: slideUpFade 0.2s ease;
+}
+.alertTaskProcess i {
+  font-size: 10rem;
+  color: rgba(163, 7, 7, 0.733);
+}
 .alertDeleteAll i {
   font-size: 10rem;
   color: rgba(163, 7, 7, 0.733);
 }
-
+.alertTaskDelete i{
+  font-size: 10rem;
+  color: rgba(163, 7, 7, 0.733);
+}
 .confirmation button {
   width: 130px;
   padding: 1rem;
   border: none;
   border-radius: 1rem;
   transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 .confirmation button:hover {
@@ -317,8 +381,7 @@ main {
 }
 
 .yes {
-  background: rgba(0, 76, 139, 0.685);
-  ;
+  background: rgba(0, 76, 139, 0.685);;
 }
 
 .No {
@@ -331,40 +394,36 @@ main {
 }
 
 .No:hover {
-  background: rgba(194, 0, 0, 0.842);
+  background:  rgba(194, 0, 0, 0.842);
   color: var(--white);
 }
+
 
 @keyframes slideUpFade {
   from {
     transform: translate(-50%, 100px);
     opacity: 0;
   }
-
   to {
     transform: translate(-50%, -50%);
     opacity: 1;
   }
 }
 
-
-#applyFiltersButton {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background-color: rgba(0, 76, 139, 0.685);
-  color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
+@keyframes taskEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.02);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
 }
 
-#applyFiltersButton:hover {
-  background-color: rgba(0, 62, 134, 0.836);
-}
-
-#taskCardTemplate {
-  display: none;
+.task-animate {
+    animation: taskEnter 0.45s ease-out forwards;
 }
